@@ -1,14 +1,18 @@
 import javax.swing.*;
 
-public class TrabalhadoresEmpresa {  
+public class TrabalhadoresEmpresa {
+  //Cria um vetor de objetos do tipo Trabalhador
   private Trabalhador trab[];
   private int N;
 
   public static void main(String[] args) {
+    //Chama o construtor da propria classe
     TrabalhadoresEmpresa principal = new TrabalhadoresEmpresa();    
   }
 
   public TrabalhadoresEmpresa() {
+    /*Método construtor onde são realizadas todas chamadas
+    de métodos.*/   
     simulacaoLeituraDeDados();
     JOptionPane.showMessageDialog(null, "Valores Ordenados por nome.");
     quickSortNome(trab, 0, trab.length-1);
@@ -17,8 +21,9 @@ public class TrabalhadoresEmpresa {
     quickSortSalario(trab, 0, trab.length-1);
     mostraTrabalhadoresCadastrados();
   }
-
-  public void simulacaoLeituraDeDados() {    
+  
+  //Instancia 7 objetos Trabalhador no vetor criado acima.
+  public void simulacaoLeituraDeDados() {
     N = 7;
     trab = new Trabalhador[N];
     trab[0] = new Trabalhador("Julio", 2000f, 'M');
@@ -29,13 +34,15 @@ public class TrabalhadoresEmpresa {
     trab[5] = new Trabalhador("Jorge", 2200f, 'M');
     trab[6] = new Trabalhador("Carlos", 3500f, 'M');
   }
-
+  
+  /*leituraDeDados() e mostraTrabalhadoresCadrastados() são
+  responsáveis por exibir os objetos que constam no vetor.*/
   public void leituraDeDados() {
     String umNome;
     float umSalario;
     char umSexo;
     N = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de trabalhadores:"));
-    trab = new Trabalhador[N]; //aloca memória para o vetor
+    trab = new Trabalhador[N]; 
 
     for (int i = 0; i < N; i++) {
       umNome = JOptionPane.showInputDialog("Digite o nome do trabalhador " + (i + 1) + ": ");
@@ -58,7 +65,7 @@ public class TrabalhadoresEmpresa {
     JOptionPane.INFORMATION_MESSAGE);
   }
 
-  
+  //Método que ordena por salário, depende de separarSalario() para seu funcionamento
   public static boolean quickSortSalario(Trabalhador[] vetor, int inicio, int fim) {    
     if (vetor == null) return false;
     if (inicio < fim) {
@@ -86,7 +93,8 @@ public class TrabalhadoresEmpresa {
     vetor[f] = pivo;
     return f;
   }
-
+  
+  //Método que ordena por nome, depende de separarNome() para seu funcionamento
   public static boolean quickSortNome(Trabalhador[] vetor, int inicio, int fim) {    
     if (vetor == null) return false;
     if (inicio < fim) {
@@ -103,8 +111,9 @@ public class TrabalhadoresEmpresa {
     int i = inicio + 1, f = fim;
     int c = 0;
     while (i <= f) {
-      c = vetor[i].getNome().compareTo(pivo.getNome());      
-      if (c<0) i++; 
+      /* compareTo retorna valor inteiro da diferença na ordem alfabetica
+      das Strings comparadas. */          
+      if ((vetor[i].getNome().compareTo(pivo.getNome())<0) i++; 
       else if ((pivo.getNome().compareTo(vetor[f].getNome())<0)) f--;
       else {
         Trabalhador troca = vetor[i];
