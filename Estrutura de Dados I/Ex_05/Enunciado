@@ -1,0 +1,13 @@
+Exercicio 5 - Recursividade e método QuickSort
+
+• Alterar o exemplo fornecido no projeto NetBeans TrabalhadoresEmpresa.
+
+• Construir dois métodos de ordenação a partir do método exemplo
+fornecido: public boolean quickSort (double vetor [])
+
+    • Um primeiro método para ordenar em ordem decrescente os dados
+      do vetor de objetos de trabalhadores pelos salários dos
+      trabalhadores      
+      
+    • Um segundo método para ordenar em ordem crescente os dados do
+      vetor de objetos de trabalhadores pelos nomes dos trabalhadores.
