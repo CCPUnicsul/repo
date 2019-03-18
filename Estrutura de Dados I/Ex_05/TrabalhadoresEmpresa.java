@@ -1,7 +1,6 @@
 import javax.swing.*;
 
-public class TrabalhadoresEmpresa {
-  //Armazenaremos os dados dos trabalhadores da empresa em um vetor:
+public class TrabalhadoresEmpresa {  
   private Trabalhador trab[];
   private int N;
 
@@ -19,8 +18,7 @@ public class TrabalhadoresEmpresa {
     mostraTrabalhadoresCadastrados();
   }
 
-  public void simulacaoLeituraDeDados() {
-    //para efetuar testes rápidos, criamos um vetor de objetos com dados fixos:
+  public void simulacaoLeituraDeDados() {    
     N = 7;
     trab = new Trabalhador[N];
     trab[0] = new Trabalhador("Julio", 2000f, 'M');
@@ -44,12 +42,7 @@ public class TrabalhadoresEmpresa {
       umSalario = Float.parseFloat(JOptionPane.showInputDialog("Digite o salário de " + umNome + ": "));
       umSexo = JOptionPane.showInputDialog("Digite o sexo deste trabalhador: ").charAt(0);
       umSexo = Character.toUpperCase(umSexo);
-      trab[i] = new Trabalhador(umNome, umSalario, umSexo); //aloca memória para o objeto (e executa o método construtor com parâmetros)
-      // a inicialização anterior do objeto poderia ser em etapas:
-      //	trab[i] = new Trabalhador();  //usando o construtor sem parâmetros
-      //	trab[i].setNome(umNome);
-      //	trab[i].setSalario(umSalario);
-      //	trab[i].setSexo(umSexo);
+      trab[i] = new Trabalhador(umNome, umSalario, umSexo); 
     }
   }
 
@@ -58,7 +51,7 @@ public class TrabalhadoresEmpresa {
     for (int i = 0; i < N; i++) {
       cad += trab[i].toString() + "\n";
     }
-    JTextArea outputArea = new JTextArea(15, 40); //15 linhas e 40 colunas
+    JTextArea outputArea = new JTextArea(15, 40);
     outputArea.setText(cad);
     JScrollPane rolagem = new JScrollPane(outputArea);
     JOptionPane.showMessageDialog(null, rolagem, "Dados dos trabalhadores cadastrados",
@@ -125,6 +118,4 @@ public class TrabalhadoresEmpresa {
     vetor[f] = pivo;
     return f;
   }
-
-
 }
