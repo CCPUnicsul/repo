@@ -113,7 +113,7 @@ public class TrabalhadoresEmpresa {
     while (i <= f) {
       /* compareTo retorna valor inteiro da diferença na ordem alfabetica
       das Strings comparadas. */          
-      if ((vetor[i].getNome().compareTo(pivo.getNome())<0) i++; 
+      if ((vetor[i].getNome().compareTo(pivo.getNome())<0)) i++; 
       else if ((pivo.getNome().compareTo(vetor[f].getNome())<0)) f--;
       else {
         Trabalhador troca = vetor[i];
